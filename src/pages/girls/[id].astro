@@ -3,20 +3,20 @@ import { getCollection } from "astro:content";
 import BaseDetail from "../../layouts/BaseDetail.astro";
 import { PAGES } from "../../config";
 
-if (PAGES.talks.isActive === false) {
+if (PAGES.girls.isActive === false) {
     return Astro.redirect("/404");
 }
 
 export async function getStaticPaths() {
     if (PAGES.talks.isActive === false) return [];
-    const talks = await getCollection("talks");
-    return talks.map((talk: any) => ({
-        params: { id: talk.id },
-        props: { talk },
+    const girls = await getCollection("girls");
+    return girls.map((girl: any) => ({
+        params: { id: girl.id },
+        props: { girl },
     }));
 }
 
 const { id } = Astro.params;
 ---
 
-<BaseDetail collection="talks" id={id} />
+<BaseDetail collection="girls" id={id} />
