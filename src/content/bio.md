@@ -1,6 +1,6 @@
 ---
 name: "You"
-avatar: "shannon.jpg"
+avatar: "images/you_and_me.png"
 shortBio: "I like beautiful people and beautiful breasts."
 institution: "Japan"
 ---
