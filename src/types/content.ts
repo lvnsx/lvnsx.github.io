@@ -50,7 +50,7 @@ export interface Publication extends BasePage {
   external_url?: string;
 }
 
-export interface Talk extends BasePage {
+export interface Girl extends BasePage {
   date: string;
   event?: string;
   external_url?: string;
