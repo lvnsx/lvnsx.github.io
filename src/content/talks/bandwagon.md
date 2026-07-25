@@ -1,46 +1,52 @@
 ---
-title: "The Bandwagon of Information Theory"
-date: "1956-10-01"
-event: "IRE National Convention, New York"
-external_url: "https://archive.org/details/shannon-bandwagon"
-description: "A cautionary talk about the spread and misuse of information theory outside its proper domain. Famous for warning against overapplication."
+title: "関水渚（せきみず なぎさ）"
+date: "2026-07-25"
+description: ""
+author: "Love and Sex"
 tags:
-  - "Information Theory"
-  - "Philosophy"
-  - "History"
+  - "Actress"
 ---
+## 基本情報
+- **本名**：関水渚（本名同じ）
+- **生年月日**：1998年6月5日
+- **出身地**：神奈川県
+- **血液型**：O型
+- **所属事務所**：ホリプロ
+- **職業**：女優、グラビアモデル
+- **身長**：158〜159cm（情報源により表記に差あり）
+- **スリーサイズ**：非公表
 
-## The Talk
+## SNS・公式サイト
+- **Instagram**：[@nagisa_sekimizu](https://www.instagram.com/nagisa_sekimizu/)
+- **所属事務所 公式プロフィール**：https://www.horipro.co.jp/sekimizunagisa/
 
-This is perhaps my most famous talk, in which I warned against the excessive application of information theory to fields where it didn't belong.
+## 経歴
+- 石原さとみに憧れて芸能界を志す
+- **2015年**：「第40回ホリプロタレントスカウトキャラバン」ファイナリストに選出、芸能界入り
+- **2017年4月**：『アクエリアス』のCMでデビュー
+- **2017年**：『週刊少年サンデー』『週刊ヤングマガジン』でグラビアデビュー（初登場で表紙）
+- **2019年**：映画『町田くんの世界』で1000人超のオーディションを勝ち抜き、猪原奈々役でヒロイン抜擢・映画初主演
+  - 同作で第62回ブルーリボン賞新人賞、第43回山路ふみ子映画賞新人女優賞、第74回毎日映画コンクール新人賞、第93回キネマ旬報ベスト・テン新人女優賞を受賞
+- **2021年**：ドラマ『八月は夜のバッティングセンターで。』でドラマ初主演（仲村トオルとW主演）
 
-### The Warning
+## 主な出演作品
 
-> *"Recently there has been a great deal of talk about 'information theory'... The field has been overworked... We should like to issue a warning and at the same time a reassurance."*
+**映画**
+- 『町田くんの世界』（2019年）猪原奈々役（映画初主演）
+- 『カイジ ファイナルゲーム』（2020年）
+- 『コンフィデンスマンJP』シリーズ
+- 『いつか、いつも……いつまでも。』（2022年）
 
-I expressed concern that information theory was being applied to:
-- Psychology
-- Linguistics
-- Biology
-- Economics
-- Even religion!
+**ドラマ**
+- 『4分間のマリーゴールド』（2019年）
+- 『八月は夜のバッティングセンターで。』（2021年）
+- NHK大河ドラマ『どうする家康』（2023年）
+- 『#who am I』（2023年）
+- 『彼女と彼氏の明るい未来』（2024年）
+- 『ザ ロイヤルファミリー』（2024年）山王百合子役
+- 『今夜もシリアルキラーと待ち合わせ』（2026年）黒井ヒナタ役
 
-### The Reassurance
-
-I clarified that information theory was a mathematical tool with specific applications, not a universal explanation for everything.
-
-## What I Said
-
-1. **Information is not meaning**: The mathematical concept of information is about uncertainty reduction, not semantic content
-2. **Don't force fit**: Not every problem is an information theory problem
-3. **Stay rigorous**: Maintain mathematical standards
-
-## Reception
-
-The talk was controversial. Some appreciated the caution, others felt I was being too restrictive.
-
-In retrospect, I think I was mostly right - many early applications of information theory were overblown, though some (like bioinformatics) turned out to be genuinely useful.
-
----
-
-*Not every problem needs information theory. Some problems are just problems.*
+## その他
+- 趣味はウィンドサーフィン、お菓子作り
+- 特技は野球のスコアを書くこと、書道
+- 「渚」の名は父がサーフィンをしていた神奈川県逗子市の海にちなんで命名
