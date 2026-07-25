@@ -8,7 +8,7 @@ if (PAGES.girls.isActive === false) {
 }
 
 export async function getStaticPaths() {
-    if (PAGES.talks.isActive === false) return [];
+    if (PAGES.girls.isActive === false) return [];
     const girls = await getCollection("girls");
     return girls.map((girl: any) => ({
         params: { id: girl.id },
