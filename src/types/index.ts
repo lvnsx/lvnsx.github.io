@@ -8,7 +8,7 @@ export type {
     Blog,
     Project,
     Publication,
-    Talk,
+    Girl,
     Teaching,
 } from "./content";
 
