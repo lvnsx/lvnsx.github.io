@@ -48,8 +48,3 @@ tags:
 - 特技は大正琴、弓道
 - 趣味は絵を描くこと、食べること
 - 憧れの女優は橋本環奈
-
-
-![022](https://hackmd.io/_uploads/SJ6Rx8EVze.jpg)
-![017](https://hackmd.io/_uploads/B1FgZIV4fe.jpg)
-![026](https://hackmd.io/_uploads/Hy6lWINEze.jpg)
