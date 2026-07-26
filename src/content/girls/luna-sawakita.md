@@ -39,6 +39,4 @@ tags:
 - 趣味はダンス
 - 特技はバスケットボール
 - 実妹はアイドル「鈴山ひな」
-- 
-![048](https://hackmd.io/_uploads/SJ_5kBEEfl.jpg)
-![050](https://hackmd.io/_uploads/BySiJHN4Me.jpg)
+
