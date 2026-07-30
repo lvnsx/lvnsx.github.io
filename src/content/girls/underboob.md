@@ -18,6 +18,8 @@ tags:
 ## 馬場ふみか
 ![](/images/underboob/fumika-baba01Large.jpeg)
 
+![](/images/underboob/fumika-baba02Large.jpeg)
+
 ## 菊池姫奈
 ![](/images/underboob/hina-kikuchi01Large.jpeg)
 
