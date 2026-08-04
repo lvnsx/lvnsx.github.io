@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  // ローカル画像のメタデータオブジェクト または 外部URL文字列 の配列
+  images?: (ImageMetadata | string)[];
+  columns?: number; // モバイル超えの列数（デフォルト: 3列）
+  altPrefix?: string;
+}
+
+const { 
+  images = [], 
+  columns = 3, 
+  altPrefix = 'Gallery image' 
+} = Astro.props;
+---
+
+{images.length > 0 && (
+  <div class="image-grid" style={`--grid-cols: ${columns}`}>
+    {images.map((img, index) => (
+      <div class="grid-item">
+        {typeof img === 'string' ? (
+          /* 外部URL画像の場合 */
+          <img 
+            src={img} 
+            alt={`${altPrefix} ${index + 1}`} 
+            loading="lazy" 
+          />
+        ) : (
+          /* src/assets などのローカル画像の場合 (Astroによる自動最適化) */
+          <Image 
+            src={img} 
+            alt={`${altPrefix} ${index + 1}`} 
+            width={800}
+            height={600}
+            format="webp"
+          />
+        )}
+      </div>
+    ))}
+  </div>
+)}
+
+<style>
+  .image-grid {
+    display: grid;
+    /* モバイルでは1列、画面幅に応じて最大指定列数まで自動調整 */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  @media (min-width: 640px) {
+    .image-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .image-grid {
+      grid-template-columns: repeat(var(--grid-cols, 3), 1fr);
+    }
+  }
+
+  .grid-item {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background-color: #f3f4f6;
+    aspect-ratio: 4 / 3; /* アスペクト比を固定して統一感を出します */
+  }
+
+  .grid-item :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .grid-item:hover :global(img) {
+    transform: scale(1.03);
+  }
+</style>
