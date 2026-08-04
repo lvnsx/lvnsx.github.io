@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseDetail from "../../layouts/BaseDetail.astro";
 import { PAGES } from "../../config";
+import ImageGrid from '../../components/ImageGrid.astro';
 
 if (PAGES.girls.isActive === false) {
     return Astro.redirect("/404");
@@ -17,6 +18,8 @@ export async function getStaticPaths() {
 }
 
 const { id } = Astro.params;
+const { Content } = await entry.render();
 ---
 
 <BaseDetail collection="girls" id={id} />
+<ImageGrid images={entry.data.images} columns={3} />
