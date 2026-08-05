@@ -7,36 +7,24 @@ tags:
   - "Boobs"
 ---
 
+import ImageGrid from "../../../components/ImageGrid.astro";
+
 ## 篠崎愛
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
-  <div class="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] group"><img src="/images/underboob/ai-shinozaki01Large.jpeg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03] !m-0" /></div>
-  <div class="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] group"><img src="/images/underboob/ai-shinozaki02Large.jpeg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03] !m-0" /></div>
-  <div class="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] group"><img src="/images/underboob/ai-shinozaki03Large.jpeg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03] !m-0" /></div>
-</div>
+<ImageGrid images={["/images/underboob/ai-shinozaki01Large.jpeg", "/images/underboob/ai-shinozaki02Large.jpeg", "/images/underboob/ai-shinozaki03Large.jpeg"]} columns={3} />
 
 ## 馬場ふみか
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
-  <div class="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] group"><img src="/images/underboob/fumika-baba01Large.jpeg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03] !m-0" /></div>
-  <div class="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] group"><img src="/images/underboob/fumika-baba02Large.jpeg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03] !m-0" /></div>
-</div>
+<ImageGrid images={["/images/underboob/fumika-baba01Large.jpeg", "/images/underboob/fumika-baba02Large.jpeg"]} columns={3} />
 
 ## 菊池姫奈
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
-  <div class="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] group"><img src="/images/underboob/hina-kikuchi01Large.jpeg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03] !m-0" /></div>
-</div>
+<ImageGrid images={["/images/underboob/hina-kikuchi01Large.jpeg"]} columns={3} />
 
 ## 筧美和子
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
-  <div class="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] group"><img src="/images/underboob/miwako-kakei01Large.jpeg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03] !m-0" /></div>
-</div>
+<ImageGrid images={["/images/underboob/miwako-kakei01Large.jpeg"]} columns={3} />
 
 ## 寺本莉緒
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-8">
-  <div class="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] group"><img src="/images/underboob/rio-teramoto01Large.jpeg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03] !m-0" /></div>
-  <div class="overflow-hidden rounded-lg bg-gray-100 aspect-[4/3] group"><img src="/images/underboob/rio-teramoto02Large.jpeg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03] !m-0" /></div>
-</div>
+<ImageGrid images={["/images/underboob/rio-teramoto01Large.jpeg", "/images/underboob/rio-teramoto02Large.jpeg"]} columns={3} />
