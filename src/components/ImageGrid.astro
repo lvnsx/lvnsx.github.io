@@ -19,28 +19,125 @@ const {
 {images.length > 0 && (
   <div class="image-grid" style={`--grid-cols: ${columns}`}>
     {images.map((img, index) => (
-      <div class="grid-item">
+      /* JSが無効な場合は元画像をそのまま開く（スクリプト側でlightboxに差し替える） */
+      <a class="grid-item" href={typeof img === 'string' ? img : img.src} data-lightbox-item>
         {typeof img === 'string' ? (
           /* 外部URL画像の場合 */
-          <img 
-            src={img} 
-            alt={`${altPrefix} ${index + 1}`} 
-            loading="lazy" 
+          <img
+            src={img}
+            alt={`${altPrefix} ${index + 1}`}
+            loading="lazy"
           />
         ) : (
           /* src/assets などのローカル画像の場合 (Astroによる自動最適化) */
-          <Image 
-            src={img} 
-            alt={`${altPrefix} ${index + 1}`} 
+          <Image
+            src={img}
+            alt={`${altPrefix} ${index + 1}`}
             width={800}
             height={600}
             format="webp"
           />
         )}
-      </div>
+      </a>
     ))}
   </div>
 )}
+
+{/* ページ内にImageGridが複数あってもスクリプトは1回だけバンドル・実行される */}
+<script>
+    type LightboxItem = { href: string; alt: string };
+
+    function buildLightbox(): HTMLDialogElement {
+        const dialog = document.createElement("dialog");
+        dialog.className = "lightbox";
+        // 静的な文字列のみ（ユーザー入力は含まない）
+        dialog.innerHTML = `
+            <img class="lightbox-image" alt="" />
+            <button class="lightbox-prev" type="button" aria-label="前の画像">&lsaquo;</button>
+            <button class="lightbox-next" type="button" aria-label="次の画像">&rsaquo;</button>
+            <button class="lightbox-close" type="button" aria-label="閉じる">&times;</button>
+            <p class="lightbox-counter" aria-live="polite"></p>
+        `;
+        document.body.appendChild(dialog);
+        return dialog;
+    }
+
+    function initLightbox() {
+        const grids = document.querySelectorAll<HTMLElement>(".image-grid");
+        if (grids.length === 0) return;
+
+        // ページ遷移で取り残された前のdialogを破棄してから作り直す
+        document.querySelector(".lightbox")?.remove();
+
+        const dialog = buildLightbox();
+        const image = dialog.querySelector<HTMLImageElement>(".lightbox-image")!;
+        const counter = dialog.querySelector<HTMLElement>(".lightbox-counter")!;
+        const prevBtn = dialog.querySelector<HTMLButtonElement>(".lightbox-prev")!;
+        const nextBtn = dialog.querySelector<HTMLButtonElement>(".lightbox-next")!;
+        const closeBtn = dialog.querySelector<HTMLButtonElement>(".lightbox-close")!;
+
+        let items: LightboxItem[] = [];
+        let index = 0;
+
+        function show(next: number) {
+            index = (next + items.length) % items.length;
+            image.src = items[index].href;
+            image.alt = items[index].alt;
+            counter.textContent = `${index + 1} / ${items.length}`;
+
+            // 1枚しかないグリッドでは送り操作を出さない
+            const multiple = items.length > 1;
+            prevBtn.hidden = !multiple;
+            nextBtn.hidden = !multiple;
+            counter.hidden = !multiple;
+        }
+
+        grids.forEach((grid) => {
+            const links = Array.from(
+                grid.querySelectorAll<HTMLAnchorElement>("a[data-lightbox-item]"),
+            );
+
+            links.forEach((link, position) => {
+                link.addEventListener("click", (event) => {
+                    // 修飾キー・中クリックは「新しいタブで開く」を尊重する
+                    if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+                    event.preventDefault();
+
+                    // 送りの範囲はグリッド単位（見出しごとの1グループ）
+                    items = links.map((el) => ({
+                        href: el.href,
+                        alt: el.querySelector("img")?.alt ?? "",
+                    }));
+                    show(position);
+                    dialog.showModal();
+                });
+            });
+        });
+
+        prevBtn.addEventListener("click", () => show(index - 1));
+        nextBtn.addEventListener("click", () => show(index + 1));
+        closeBtn.addEventListener("click", () => dialog.close());
+
+        // 背景（画像の外側）クリックで閉じる。ESCは<dialog>の標準動作
+        dialog.addEventListener("click", (event) => {
+            if (event.target === dialog) dialog.close();
+        });
+
+        dialog.addEventListener("keydown", (event) => {
+            if (items.length < 2) return;
+            if (event.key === "ArrowLeft") {
+                event.preventDefault();
+                show(index - 1);
+            } else if (event.key === "ArrowRight") {
+                event.preventDefault();
+                show(index + 1);
+            }
+        });
+    }
+
+    // ClientRouterが有効なため、初回表示・遷移後ともastro:page-loadで初期化する
+    document.addEventListener("astro:page-load", initLightbox);
+</script>
 
 <style>
   .image-grid {
