@@ -5,7 +5,7 @@ export const SITE: SiteConfig = {
     author: "Love and Sex",
     desc: "Share my personal experiences.",
     title: "Love and Sex",
-    ogImage: "shannon.webp",
+    ogImage: "/shannon.jpg",
     postPerPage: 5,
     favicon: "/favicon.svg",
     lang: "en",
