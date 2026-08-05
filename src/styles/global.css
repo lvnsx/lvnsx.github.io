@@ -953,4 +953,126 @@ a:hover,
     .nav-link {
         font-size: 0.85rem;
     }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 36px;
+        height: 36px;
+    }
+
+    .lightbox-close {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+}
+
+
+/* ===========================================
+   LIGHTBOX (ImageGrid)
+   =========================================== */
+
+/* Grid thumbnails become lightbox triggers */
+a.grid-item {
+    display: block;
+    cursor: zoom-in;
+}
+
+.lightbox {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    padding: 0;
+    border: none;
+    background: transparent;
+    overflow: hidden;
+}
+
+/* Only flex when open, so the UA `display: none` still hides it when closed */
+.lightbox[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox::backdrop {
+    background: rgb(0 0 0 / 0.85);
+}
+
+.lightbox-image {
+    max-width: min(92vw, 1400px);
+    max-height: 88vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--foreground);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--background);
+}
+
+/* `hidden` must beat the `display: flex` above */
+.lightbox-close[hidden],
+.lightbox-prev[hidden],
+.lightbox-next[hidden],
+.lightbox-counter[hidden] {
+    display: none;
+}
+
+.lightbox-close {
+    top: 1rem;
+    right: 1rem;
+}
+
+.lightbox-prev {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-next {
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lightbox-counter {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Prevent the page behind the modal from scrolling */
+html:has(.lightbox[open]) {
+    overflow: hidden;
 }
