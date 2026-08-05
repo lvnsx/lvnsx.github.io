@@ -16,17 +16,9 @@ const publications = defineCollection({
     }),
 });
 
-const girls = defineCollection({
-    loader: glob({ pattern: "**/*.md", base: "./src/content/girls" }),
-    schema: z.object({
-        title: z.string(),
-        date: z.string().optional(),
-        description: z.string().optional(),
-        author: z.string().optional(),
-        tags: z.array(z.string()).optional(),
-        image: z.string().optional(),
-        external_url: z.string().optional(),
-    }),
+const girlsCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/girls" }),
+  // You can define a schema here if you want to validate frontmatter
 });
 
 const posts = defineCollection({
